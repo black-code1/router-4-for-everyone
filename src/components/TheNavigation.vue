@@ -15,5 +15,8 @@ export default {
 </script>
 
 <style scoped>
-
+  #nav .vue-shool-active-link{
+    color:red;
+    border-bottom: 2px solid red;
+  }
 </style>
