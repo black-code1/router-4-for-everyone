@@ -10,6 +10,12 @@
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+
+  <br>
+  <router-link to="/">Home</router-link>
+  <router-link to="/about">About</router-link>
+
+  <router-view></router-view>
 </template>
 
 <style scoped>
