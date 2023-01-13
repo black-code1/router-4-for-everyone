@@ -6,18 +6,19 @@
         :key="destination.id"
         :to="{name: 'destination.show', params: {id: destination.id, slug:destination.slug}}"
     >
+      {{ destination.name }}
     </router-link>
   </div>
 </template>
 
 <script>
-import sourecData from '@/data.json'
+import sourceData from '@/data.json'
 export default {
   name: "TheNavigation",
 
   data() {
     return {
-      destination: sourecData.destinations
+      destinations: sourceData.destinations
     }
   }
 }
