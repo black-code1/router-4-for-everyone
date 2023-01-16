@@ -18,6 +18,32 @@ const routes = [
             requiresAuth: true
         }
     },
+    // {path: '/:orderId(\\d+)', name: 'orders'},
+    // {path: '/:productName', name: 'product'},
+    // {
+    //     // /example/8/8/0/9
+    //     path: "/example/:id+",
+    //     component: () => import("@/views/Login.vue")
+    // },
+    // {
+    //   path: "/example/:id(\\d+)",
+    //     component: () => import("@/views/Login.vue")
+    // },
+    //
+    // {
+    //     path: "/example/:id(\\d+)+",
+    //     component: () => import("@/views/Login.vue")
+    // },
+
+    // {
+    //     path: "/example/:id(\\d+)*",
+    //     component: () => import("@/views/Login.vue")
+    // },
+    {
+        // makes param optional
+        path: "/example/:id(\\d+)?",
+        component: () => import("@/views/Login.vue")
+    },
     {
       path: '/login',
       name: 'login',
