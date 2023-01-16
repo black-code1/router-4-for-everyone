@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>All Destinations</h1>
+    <button @click="triggerRouterError">Trigger Router Error</button>
     <div class="destinations">
       <router-link
         v-for="destination in destinations"
@@ -16,11 +17,28 @@
 
 <script>
 import sourceData from '@/data.json'
+import {isNavigationFailure, NavigationFailureType} from "vue-router";
+
 export default {
   name: "Home",
   data() {
     return {
       destinations: sourceData.destinations
+    }
+  },
+
+  methods: {
+    async triggerRouterError() {
+      const navigationFailure = await this.$router.push('/')
+      // if(isNavigationFailure(navigationFailure, NavigationFailureType.cancelled)){
+      if(isNavigationFailure(navigationFailure, NavigationFailureType.duplicated)){
+        //   a new navigation took place before the current navigation could finish
+        //   things went wrong
+        console.log(navigationFailure.to)
+        console.log(navigationFailure.from)
+      } else {
+      // all is well
+      }
     }
   }
 }
